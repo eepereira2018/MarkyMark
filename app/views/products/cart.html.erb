@@ -1,0 +1,21 @@
+
+
+
+<h1>Cart</h1>
+  <% @products.each do |product| %>
+    <% unless product.archived? %>
+      <div class="card" style="width: 18rem; margin-bottom:1rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= product.title %> </h5>
+    <%= image_tag product.image, style: 'width:15rem;' %>
+    <%= link_to product.title, product %> 
+    
+  </div>
+</div>
+    <% end %>
+  <% end %>
+
+<a class="btn btn-primary" href= "dcookies" role="button">Checkout!</a>
+
+
+

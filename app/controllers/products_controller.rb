@@ -3,8 +3,19 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def dcookies
+    @_request.reset_session
+    redirect_to root_path
+  end
+  
+  def cart
+    @products = Product.find(session[:cart])
+  end
+
   def show
+    
     @product = Product.find(params[:id])
+    
   end
 
 
@@ -34,6 +45,14 @@ def update
   else
     render :edit, status: :unprocessable_entity
   end
+end
+
+def put_in_cart
+  @product = Product.find(params[:id])
+  cart = session[:cart] || []
+  cart << @product.id
+  session[:cart] = cart
+  redirect_to root_path
 end
 
 def destroy
