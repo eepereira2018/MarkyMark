@@ -9,7 +9,12 @@ class ProductsController < ApplicationController
   end
   
   def cart
+    if session[:cart].nil?
+    @products = []
+    else
     @products = Product.find(session[:cart])
+    end
+    
   end
 
   def show

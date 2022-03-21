@@ -2,6 +2,7 @@
 
 
 <h1>Cart</h1>
+  <% if @products %>
   <% @products.each do |product| %>
     <% unless product.archived? %>
       <div class="card" style="width: 18rem; margin-bottom:1rem;">
@@ -16,6 +17,9 @@
   <% end %>
 
 <a class="btn btn-primary" href= "dcookies" role="button">Checkout!</a>
+<%else%>
+ <p>cart empty!</p>
+<%end%>
 
 
 
