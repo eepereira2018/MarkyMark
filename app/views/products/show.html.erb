@@ -6,7 +6,8 @@
 <div class="card-body">
 <h5 class="card-title"><%= @product.title %> </h5>
 <%= image_tag @product.image, style: 'width:15rem;' %>
-<p class= "card-text"><%= @product.cost %></p>
+<p class= "card-text">$<%= @product.cost %></p>
+<p class="card-text">Stock: <%= @product.stock %></p>
 <p class= "card-text"><%= @product.description %></p>
   <a href="#" class="card-link"><%= link_to "Destroy", product_path(@product), data: {
                     turbo_method: :delete,

@@ -4,8 +4,18 @@ class ProductsController < ApplicationController
   end
 
   def dcookies
+    if session[:cart].nil?
+    redirect_to root_path
+    else
+    products = Product.find(session[:cart])
+    products.each do |product|
+      product.stock = product.stock-1 
+      product.save
+    end
     @_request.reset_session
     redirect_to root_path
+    end
+    
   end
   
   def cart

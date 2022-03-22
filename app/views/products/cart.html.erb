@@ -9,6 +9,7 @@
   <div class="card-body">
     <h5 class="card-title"><%= product.title %> </h5>
     <%= image_tag product.image, style: 'width:15rem;' %>
+    <p class="card-text">Stock: <%= product.stock %></p>
     <%= link_to product.title, product %> 
     
   </div>
