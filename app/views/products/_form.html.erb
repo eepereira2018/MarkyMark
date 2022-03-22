@@ -15,11 +15,6 @@
   </div>
 
   <div>
-    <%= form.label :stock %><br>
-    <%= form.number_field :stock %>
-  </div>
-
-  <div>
     <%= form.label :description %><br>
     <%= form.text_area :description %><br>
     <% @product.errors.full_messages_for(:description).each do |message| %>
@@ -35,6 +30,12 @@
   <%= form.label :status %><br>
   <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
 </div>
+
+  <div>
+    <%= form.label :stock %><br>
+    <%= form.number_field :stock %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>
