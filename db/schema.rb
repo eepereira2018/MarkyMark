@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_034153) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
-    t.integer "stock", default: 5
+    t.integer "stock"
   end
 
 end
