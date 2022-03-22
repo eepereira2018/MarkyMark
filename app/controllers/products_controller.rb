@@ -79,7 +79,7 @@ end
 
 private
     def product_params
-      params.require(:product).permit(:title, :description, :cost, :image, :status)
+      params.require(:product).permit(:title, :description, :cost, :image, :status, :stock)
     end
   end
 
